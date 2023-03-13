@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --body-color: #3D6CE3;
+  --form-color: #fff;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--body-color);
+}
+
+.box {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  display: none;
+  transition: opacity 0.09s ease;
+  background-color: #F8D7DA;
+  margin: 10px 10px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-align: center;
+  color: #a5222b;
+  font-size: 15px;
+}
+
+.active.message {
+  display: inline-flex;
+}
+
+.activeC.message {
+  background-color: #d7f8de;
+  color: #22a529;
+  display: inline-flex;
+}
+
+.containerP {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  text-decoration: none;
+  width: 200px;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #1855fd;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 15px;
+  border: 1px solid;
+  border-color: #1841b3;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  position: relative;
+  max-width: 450px;
+  background-color: var(--form-color);
+  border-radius: 7px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.container .forms {
+  display: flex;
+  height: 440px;
+  align-items: center;
+  width: 200%;
+  transition: height 0.3s ease;
+}
+.container .forms .button input:hover {
+  background-color: #1855fd;
+}
+.container .forms .signup {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+}
+.container .forms .signup span {
+  font-size: 15px;
+  padding-right: 5px;
+}
+.container .forms .signup a {
+  font-size: 15px;
+  text-decoration: none;
+  color: var(--body-color);
+  font-weight: 500;
+}
+.container .forms .signup a:hover {
+  text-decoration: underline;
+}
+.container.active .forms {
+  height: 600px;
+}
+.container .form {
+  width: 50%;
+  padding: 30px;
+  background-color: var(--form-color);
+  border-radius: 7px;
+  transition: margin-left 0.18s ease;
+}
+.container .form .tittle {
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+}
+.container .form .tittle::before {
+  position: absolute;
+  top: 37px;
+  left: 0;
+  content: "";
+  width: 32px;
+  height: 3px;
+  background-color: var(--body-color);
+  border-radius: 2px;
+}
+.container .form .input-field {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+.container .form .input-field input {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #757575;
+  padding: 0 35px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.container .form .input-field input:is(:focus, :valid) {
+  border-bottom-color: #4070f4;
+}
+.container .form .input-field input:is(:focus, :valid) ~ i {
+  color: #4070f4;
+}
+.container .form .input-field .icono {
+  font-size: 23px;
+  position: absolute;
+  top: 44%;
+  left: 0;
+  color: #757575;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+.container .form .input-field .showPass {
+  right: 0;
+  font-size: 23px;
+  position: absolute;
+  top: 44%;
+  color: #757575;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.container .form .checkbox-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .form .checkbox-container .checkbox-content {
+  font-size: 15px;
+  accent-color: var(--body-color);
+}
+.container .form .checkbox-container a {
+  text-decoration: none;
+  color: var(--body-color);
+  font-size: 15px;
+  font-weight: 500;
+}
+.container .form .checkbox-container a:hover {
+  text-decoration: underline;
+}
+.container .form .button2 input {
+  letter-spacing: 1px;
+  background-color: var(--body-color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container.active .login {
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+.container .registration {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.09s ease;
+}
+.container.active .registration {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.container404 {
+  width: 450px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+.container404::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  top: 150px;
+  left: 70px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: #1855fd;
+}
+.container404 h1 {
+  font-size: 100px;
+}
+.container404 h3 {
+  color: #505050;
+  font-size: 30px;
+  font-weight: 300;
+}
+.container404 a {
+  text-decoration: none;
+  width: 200px;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #1855fd;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 15px;
+  border: 1px solid;
+  border-color: #1841b3;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container404 a:hover {
+  background-color: #2044a0;
+}
+
+.congratulation {
+  width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+}
+.congratulation h1 {
+  font-size: 50px;
+}
+.congratulation h3 {
+  color: #505050;
+  font-weight: 300;
+}
+.congratulation a {
+  text-decoration: none;
+  width: 200px;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: #1855fd;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 15px;
+  border: 1px solid;
+  border-color: #1841b3;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+.congratulation a:hover {
+  background-color: #2044a0;
+}
+
+.overlay.active {
+  content: "";
+  width: 100%;
+  position: fixed;
+  min-height: 100vh;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.75);
+  opacity: 0.8;
+  transition: opacity 250ms ease;
+  z-index: 20;
+}
+
+.profile {
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  background-color: #fff;
+  border-radius: 7px;
+  padding-bottom: 15px;
+  position: relative;
+}
+.profile__tittle {
+  color: #3d3d3d;
+  padding: 15px 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: rgb(243, 241, 241);
+  border-bottom: 1px solid #b1b0b0;
+}
+.profile__search-box {
+  margin-top: 15px;
+  width: 100%;
+  padding: 15px 20px;
+}
+.profile__search-box input {
+  padding: 8px;
+  outline: none;
+  border: none;
+  border: 1px solid #b1b0b0;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 18px;
+}
+.profile__button {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  margin: 10px 20px;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.profile__button:hover {
+  background-color: #2044a0;
+}
+.profile__message-top {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  margin: 0px 20px;
+}
+.profile__message-top .profile__box-checkbox {
+  grid-column: span 1;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+.profile__checkbox {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.profile__name {
+  display: flex;
+  margin-left: 10px;
+  grid-column: span 9;
+  border-left: 1px solid #b1b0b0;
+  padding-left: 10px;
+  height: 100%;
+  align-items: center;
+}
+.profile__date {
+  grid-column: span 4;
+}
+.profile__settings {
+  grid-column: 16/span 1;
+}
+.profile__settings img {
+  cursor: pointer;
+  width: 30px;
+  display: block;
+  border-radius: 3px;
+  padding: 3px;
+}
+.profile__line {
+  height: 1px;
+  background-color: #b1b0b0;
+  width: 100%;
+  margin-left: 20px;
+}
+.profile__message {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: 35px;
+  margin: 0px 20px;
+  align-items: center;
+  font-weight: 500;
+  border-bottom: 1px solid #b1b0b0;
+  cursor: pointer;
+}
+.profile__message:hover {
+  background-color: #f0f0f0;
+}
+.profile__message .profile__box-checkbox {
+  grid-column: span 1;
+  justify-self: flex-end;
+  align-self: center;
+  margin-bottom: -4px;
+}
+.profile__text {
+  display: none;
+  padding: 30px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  position: absolute;
+  background-color: #fff;
+  z-index: 40;
+  border-radius: 8px;
+}
+.profile__text.active {
+  display: block;
+}
+.profile__text div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 15px;
+}
+.profile__text img {
+  padding: 2px;
+  display: block;
+  width: 60px;
+  cursor: pointer;
+}
+
+.create-message {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  width: 700px;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 20px 20px;
+}
+.create-message.active {
+  display: flex;
+}
+.create-message__close {
+  display: flex;
+  width: 100%;
+  height: 30px;
+  justify-content: flex-end;
+}
+.create-message__close img {
+  cursor: pointer;
+  width: 30px;
+}
+.create-message__title, .create-message__date, .create-message__message {
+  display: flex;
+}
+.create-message__title, .create-message__date, .create-message__message {
+  margin-bottom: 15px;
+}
+.create-message__title input, .create-message__date input, .create-message__message input {
+  width: 70%;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid #b1b0b0;
+  margin-left: 10px;
+  padding: 0 10px;
+}
+.create-message__date input {
+  width: 40%;
+}
+.create-message__message {
+  flex-direction: column;
+}
+.create-message__message textarea {
+  resize: none;
+  outline: none;
+  border-radius: 10px;
+  height: 100px;
+  outline: none;
+  border: 1px solid #b1b0b0;
+  padding: 10px 10px;
+}
+.create-message__button {
+  padding: 10px;
+  border-radius: 4px;
+}/*# sourceMappingURL=main.css.map */

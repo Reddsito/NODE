@@ -1,0 +1,14 @@
+<%- include('partials/header'); %>
+
+<h1>Posts</h1>
+
+<% posts.map( (p) => { %>
+
+    <div>        
+        <h2><%= p.title  %></h2>
+        <p><%= p.body  %></p>
+    </div>
+
+<% }) %>
+
+<%- include('partials/footer'); %>

@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  project2Node:
+    image: node
+    container_name: node2container
+    ports:
+      - 3000:3000
+    build: .
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+  dbmongo:
+    image: mongo
+    container_name: mongo2container
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password

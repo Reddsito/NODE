@@ -1,0 +1,54 @@
+{
+  "name": "mongodb-restapi",
+  "version": "1.0.0",
+  "description": "Proyecto con NodeJs y MongoDB",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon -L --inspect=0.0.0.0 src/index.js",
+    "start": "node src/index.js",
+    "lint": "eslint src/**/*.js --fix",
+    "prettier": "prettier --write .",
+    "prepare": "husky install",
+    "postinstall": "npm run prepare"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apideck/better-ajv-errors": "^0.3.6",
+    "@sinclair/typebox": "^0.24.46",
+    "ajv": "^8.11.0",
+    "ajv-errors": "^3.0.0",
+    "ajv-formats": "^2.1.1",
+    "axios": "^1.1.3",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "jose": "^4.10.0",
+    "mongoose": "^6.6.5",
+    "morgan": "^1.10.0",
+    "node-schedule": "^2.1.0",
+    "sass": "^1.55.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{js.md}": "prettier --write"
+  }
+}

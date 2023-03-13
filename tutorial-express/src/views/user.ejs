@@ -1,0 +1,11 @@
+<%- include('partials/header'); %>
+<h1>
+    user
+</h1>
+
+<% if(isActive) { %>
+    <p>El servidor está activo</p>
+<% } else { %>
+    <p>El servidor está inactivo</p>
+<% }%>
+<%- include('partials/footer'); %>

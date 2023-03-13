@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  project1Node:
+    image: node
+    container_name: nodecontainer
+    ports:
+      - 3000:3000
+    build: .
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run dev
+  dbmongo:
+    image: mongo
+    container_name: mongocontainer
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example

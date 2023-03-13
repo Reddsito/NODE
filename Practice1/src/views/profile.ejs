@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+        />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="../public/css/main.css" />
+        <script type="module" defer src="../public/js/profile.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+      
+        <div class="containerP">
+            <div class="overlay"></div>
+            <div class="profile">
+                <div class="profile__tittle">
+                    <h2><%= name%> <%=surname%> message dashboard</h2>
+                </div>
+                <div class="profile__search">
+                    <div class="profile__search-box">
+                        <input type="text" placeholder="Search">
+                    </div>
+                    <button class="profile__button button">New message</button>
+                  
+                </div>
+                <div class="profile__messages">
+                    <div class="profile__options">
+                        <h3>Options...</h3>
+                        <h4>Delete all</h4>
+                        <div class="profile__settings">
+                            
+                            <img class="profile__delete_all" src="../public/icons/trash.svg" alt="">
+                        </div>
+                        
+                    </div>
+                    <div class="profile__message-top">
+                        
+                        <div class="profile__box-checkbox">
+                            <input class="profile__checkbox profile__checkbox_main" type="checkbox">
+                        </div>
+                        <div class="profile__name">
+                            <h3>Received messages</h3>
+                        </div>
+                        <div class="profile__date">
+                            <h3>Date received:</h3>
+                        </div>
+                    </div>
+                    <div class="profile__line"></div>
+
+                    <div class="profile__message">
+                        <div class="profile__box-checkbox">
+                            <input class="profile__checkbox" disabled type="checkbox">
+                        </div>
+                        <div class="profile__name">
+                            <p>.   .    .</p>
+                        </div>
+                        <div class="profile__date">
+                            <p>.   .   .</p>
+                        </div>
+                        <div class="profile__settings">
+                            <img src="../public/icons/trash.svg" alt="">
+                        </div>
+                         <div class="profile__text">
+                            <div>
+                                <h2>Author: None</h2>
+                                <img class="profile__text-close" src="../public/icons/cancel.svg" alt="">
+                            </div>
+
+                            
+                            <p>. . .</p>
+                        </div>
+
+                        <div class="profile__delete">
+                            <h2>Delete Message</h2>
+                            <p>Are you sure you want to delete this message? This will remove the comment and can't be undone.</p>
+                            <div class="profile__delete-buttons">
+                                <button class="profile__button profile__button-cancel button">NO, CANCEL</button>
+                                <button class="profile__button profile__button-delete button">YES, DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                     <% messages.map( (message) => { %> 
+                    <div class="profile__message" id="<%= message._id.toString()  %>">
+                        <div class="profile__box-checkbox">
+                            <input class="profile__checkbox profile__checkbox_use" type="checkbox">
+                        </div>
+                        <div class="profile__name">
+                            <p><%= message.title %> </p>
+                        </div>
+                        <div class="profile__date">
+                            <p><%= message.date.toLocaleDateString()%></p>
+                        </div>
+                        <div class="profile__settings profile__settings_use">
+                            <img src="../public/icons/trash.svg" alt="">
+                        </div>
+                         <div class="profile__text">
+                            <div>
+                                <h2>Author: <%= message.authorName  %> </h2>
+                                <img class="profile__text-close" src="../public/icons/cancel.svg" alt="">
+                            </div>
+
+                            
+                            <p><%= message.message  %> </p>
+                        </div>
+                         <div class="profile__delete">
+                            <h2>Delete Message</h2>
+                            <p>Are you sure you want to delete this message? This will remove the message and can't be undone.</p>
+                            <div class="profile__delete-buttons">
+                                <button class="profile__button profile__button-cancel button">NO, CANCEL</button>
+                                <button class="profile__button profile__button-delete button">YES, DELETE</button>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %> 
+                    
+                    
+                </div>
+                    <div class="create-message">
+                        <div class="message"></div>
+                        <form class="sendMessage" action="#">
+                            <div class="create-message__close">
+                                <img class="close" src="../public/icons/cancel.svg" alt="">
+                            </div>
+
+                            <div class="create-message__title">
+                                <h3>Addressee</h3>
+                                <input required name="email" type="email">
+                            </div>
+                            
+                            <div class="create-message__title">
+                                <h3>Title:</h3>
+                                <input required name="title" type="text">
+                            </div>
+                            <div class="create-message__date">
+                                <h3>Scheduled date:</h3>
+                                <input required name="date" type="datetime-local">
+                            </div>
+                            <div class="create-message__message">
+                                <h3>Message:</h3>
+                                <textarea required name="message" cols="70" row="10"></textarea>
+                            </div>
+
+                            <input type="submit" class="create-message__button button" value="Send message"></input>
+                        </form>
+                    </div>
+            </div>
+
+            
+        </div>
+    </body>
+</html>

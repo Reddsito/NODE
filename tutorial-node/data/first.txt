@@ -1,0 +1,15 @@
+Modulo NODEMON sirve para actualizar a cada rato la terminal.
+npm init inicio un proyecto y creo el package
+npm install instalo un Modulo
+npm remove lo quito
+npms install modulo -D lo agrego como modulo de desarollador
+npm install modulo -g, lo instalo en mi pc
+
+Modulo Util de Node para utilizar Promisfy
+Se exporta con const {promisify } = require("util")
+
+Sirve para crear una promesa fácilmente.
+
+Pero existe una mejor forma, que solo es importando el modulo fs pero añadiendo fs/file, y ya vienen echas promesas los métodos.
+
+Módulo Events, para importarlo podemos utilizar el estandar EventEmitter = require('events')

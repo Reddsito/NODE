@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+        />
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="../public/css/main.css" />
+        <script defer type="module" src="../public/js/script.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="box">
+            <div class="message"></div>
+            <div class="message mLogin"></div>
+            <div class="container <%= mode %>">
+                <div class="forms">
+                    <div class="form login">
+                        <span class="tittle">Login</span>
+
+                        <form action="#">
+                            <div class="input-field">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    required
+                                    name="email"
+                                />
+                                <i class="uil uil-envelope icono"></i>
+                            </div>
+
+                            <div class="input-field">
+                                <input
+                                    type="password"
+                                    class="password"
+                                    placeholder="Enter your password"
+                                    required
+                                    name="password"
+                                />
+                                <i class="uil uil-lock icono"></i>
+                                <i class="uil uil-eye-slash showPass"></i>
+                            </div>
+
+                            <div class="checkbox-container">
+                                <div class="checkbox-content">
+                                    <input type="checkbox" id="logCheck" />
+                                    <label for="logCheck" class="text"
+                                        >Remember me</label
+                                    >
+                                </div>
+                                <a disabled href="#">Forgot account?</a>
+                            </div>
+
+                            <div class="input-field button2">
+                                <input type="submit" value="Login Now" />
+                            </div>
+                        </form>
+                        <div class="signup">
+                            <span>Not a member?</span>
+                            <a href="#" class="text signup-link">Signup now</a>
+                        </div>
+                    </div>
+                    <!-- ---------FORM REGISTRATION------ -->
+
+                    <div class="form registration">
+                        <span class="tittle">Registration</span>
+
+                        <form action="#">
+                            <div class="input-field">
+                                <input
+                                    type="text"
+                                    placeholder="Enter your name"
+                                    name="name"
+                                    required
+                                />
+                                <i class="uil uil-user icono"></i>
+                            </div>
+                            <div class="input-field">
+                                <input
+                                    type="text"
+                                    placeholder="Enter your surname"
+                                    name="surname"
+                                    required
+                                />
+                                <i class="uil uil-user icono"></i>
+                            </div>
+                            <div class="input-field">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    name="email"
+                                    required
+                                />
+                                <i class="uil uil-envelope icono"></i>
+                            </div>
+                            <div class="input-field">
+                                <input
+                                    type="password"
+                                    class="password"
+                                    placeholder="Enter your password"
+                                    name="password"
+                                    required
+                                />
+                                <i class="uil uil-lock icono"></i>
+                                <i class="uil uil-eye-slash showPass"></i>
+                            </div>
+
+                            <div class="checkbox-container">
+                                <div class="checkbox-content">
+                                    <input
+                                        required
+                                        type="checkbox"
+                                        id="logCheckk"
+                                    />
+                                    <label for="logCheckk"
+                                        >I accept all terms & conditions</label
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="input-field button2">
+                                <input type="submit" value="Register Now" />
+                            </div>
+                        </form>
+                        <div class="signup">
+                            <span>Alredy have an account?</span>
+                            <a href="#" class="text login-link">Login now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
